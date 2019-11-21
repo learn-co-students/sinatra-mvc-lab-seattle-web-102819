@@ -18,13 +18,13 @@ class PigLatinizer
             #     word + ["w", "a", "y"]
             # end
             
-            if consonants.include? (word[0])
+            if consonants.include? word[0]
                 letter = [word.shift] 
                 word + letter + ["a", "y"]
-            elsif consonants.include? (word[0] + word[1])
+            elsif consonants.include? (word[0] && word[1])
                 letter = word.shift(2)
                 word + letter + ["a", "y"]
-            elsif consonants.include? (word[0] + word[1] + word[2])
+            elsif consonants.include? (word[0] && word[1] && word[2])
                 letter = word.shift(3) 
                 word + letter + ["a", "y"]
             end
@@ -40,4 +40,4 @@ class PigLatinizer
  
 end
 
-# binding.pry
+binding.pry
